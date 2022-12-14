@@ -36,15 +36,13 @@
       thisBooksList.initData();
       thisBooksList.getElements();
       thisBooksList.initActions();
-      thisBooksList.filterBooks();
     }
 
     initData() {
+      const thisBookList = this;
       for (const book of dataSource.books) {
-        const ratingBgc = this.determineRatingBgc(book.rating);
-        const ratingWidth = ratingBgc * 10;
-        book.ratingBgc = ratingBgc;
-        book.ratingWidth = ratingWidth;
+        book.ratingBgc = thisBookList.determineRatingBgc(book.rating);
+        book.ratingWidth = book.rating * 10;
         const generatedHTML = templates.books(book);
         const generateDOMElement = utils.createDOMFromHTML(generatedHTML);
         const booksContainer = document.querySelector(
