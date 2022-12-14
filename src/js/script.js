@@ -37,7 +37,6 @@
       thisBooksList.getElements();
       thisBooksList.initActions();
       thisBooksList.filterBooks();
-      thisBooksList.determineRatingBgc();
     }
 
     initData() {
